@@ -12,6 +12,7 @@ void print(string str1) {
 	int len = str1.size();
 	cout << "Your string is : " << str1 << "; and the size is " << len << endl;
 
+	return;
 }
 int main() {
 	print("supercalafragalistic");
