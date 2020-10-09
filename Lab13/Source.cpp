@@ -5,16 +5,31 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "vector_manip_main.cpp"
+#include <array>
+#include "vector_manip.hpp"
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::vector;
 using std::string;
+using std::array;
 
 void getInputs(vector<string>& words) {
-	for (int i = 0; i < words.size(); i++) {
-		cout << words[i] << " ";
+	string type;
+
+	while (cin >> type) {
+		if (type == "end") {
+			break;
+		}
+		words.push_back(type);
 	}
+	cout << endl;
+
+	for (const auto& i : words) {
+		cout << i << " ";
+	}
+	cout << endl;
+
+	return;
 }

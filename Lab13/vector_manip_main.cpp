@@ -11,39 +11,25 @@
 
 #include <iostream>
 #include <vector>
-
 #include "vector_manip.hpp"
 
-int main() {
-	std::string words;
-	std::cout << "Types in any amount of words (type 'end' to quit): "
-			<< std::endl;
-	std::cin >> words;
+using std::cout;
+using std::endl;
+using std::vector;
+using std::string;
 
+int main() {
+	vector<string> words{ "Hello!", "Welcome", "to", "the", "initializer." };
+
+	std::cout << "Types in any amount of words (type 'end' to quit): "
+			<< endl;
+
+	
 	//TODO Declare a vector of strings named "words"
 	getInputs(words);
 	//TODO REQUIRED Print original words with a range-based for loop.
 	//     Access each string by-reference and make it constant.
 
-	std::cout << std::endl;
-	std::cout << "-------------------Additional 1----------------------"
-			<< std::endl;
-
-	//TODO ADDITIONAL 1 Create this function in vector_manip.cpp
-	char ch = 'x';
-//	firstLetterChange(words, ch);
-
-	//TODO print strings that had their first letter changed in vector
-
-	std::cout << std::endl;
-	std::cout << "-------------------Additional 2----------------------"
-			<< std::endl;
-
-	//TODO ADDITIONAL 2 Create this function in vector_manip.cpp
-	std::cout << "Enter strings to add to vector:" << std::endl;
-//	addUserStrings(words, "done");
-
-	//TODO Print the vector after adding words.
 
 	return 0;
 }
