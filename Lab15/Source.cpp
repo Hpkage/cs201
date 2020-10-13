@@ -21,7 +21,7 @@ void stream() {
 			cout << "You need to enter a integer." << endl;
 		}
 		else {
-			cout << "Your number is: " << value << endl;
+			cout << "Your number is: " << value*value << endl;
 		}
 	}
 	return;
