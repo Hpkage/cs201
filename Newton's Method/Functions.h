@@ -7,5 +7,6 @@
 
 long long term(std::string polyterm, long long val);
 
+long long value(std::string& str, int val);
 
 #endif
