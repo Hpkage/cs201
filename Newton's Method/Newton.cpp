@@ -9,7 +9,10 @@ using std::endl;
 #include <cmath>
 
 int main() {
+    // Enter an initial guess x
+    cout << "Enter an initial guess: ";
+    double x;
+    cin >> x;
 
-
-	return 0;
+    return 0;
 }
