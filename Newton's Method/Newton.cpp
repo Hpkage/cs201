@@ -8,14 +8,8 @@ using std::cin;
 using std::endl;
 #include <cmath>
 #include <iomanip>
-using std::setw;
+using std::setprecision;
 using std::fixed;
-
-void Newton(float x1) {
-    x1 = x1 - (x1 * x1 * x1 - 1) / (3 * (x1 * x1));
-    cout << setw(9) << fixed << x1 << endl;
-    return;
-}
 
 // The equation looks like:
 // Note that '_' stands for the word "sub"
@@ -26,15 +20,15 @@ int main() {
     float x;
     cin >> x;
 
-    float x1;
-
-    x1 = x - (x * x * x - 1) / (3 * (x * x));
-    cout << x1 << endl;
-
-    x1 = x1 - (x1 * x1 * x1 - 1) / (3 * (x1 * x1));
-    cout << x1 << endl;
-    for (size_t i = 0; i < 10; i++) {
-        Newton(x1);
+    // Formula of Newton's method
+    float x1 = x - (x * x * x - 1) / (3 * (x * x));
+    cout << setprecision(9) << fixed << x1 << endl;
+    while (true) {
+        x1 = x1 - (x1 * x1 - 2) / (2 * x1);
+        cout << setprecision(9) << fixed << x1 << endl;
+        if (x1 == x1 - (x1 * x1 - 2) / (2 * x1)) break;
     }
+
+    cout << "The real root is at: " << x1 << endl;
     return 0;
 }
