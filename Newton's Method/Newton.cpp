@@ -15,20 +15,30 @@ using std::fixed;
 // Note that '_' stands for the word "sub"
 // X_(k+1) = X_k - F(X_k)/F'(X_k)
 int main() {
+    cout << "This program finds a real root using Newton's Method." << endl;
+    cout << "The sample problem is: f(x) = x^2 - 2, the derivative is 2x." << endl;
+    cout << "The formula for Newton's Method is: " << endl << endl;
+    cout << "   x_(k+1) = x_k - f(x_k) / f'(x_k)" << endl << endl;
+
     // Enter an initial guess x
     cout << "Enter an initial guess: ";
     float x;
     cin >> x;
 
     // Formula of Newton's method
-    float x1 = x - (x * x * x - 1) / (3 * (x * x));
-    cout << setprecision(9) << fixed << x1 << endl;
+    float x1 = x - (x * x - 2) / (2 * x);
+
+    if (x == 0) {
+        cout << "You cannot divide by 0." << endl;
+        exit(1);
+    } cout << setprecision(9) << fixed << x1 << endl;
+
+    // Repeats using Newton's Method until a root is found
     while (true) {
         x1 = x1 - (x1 * x1 - 2) / (2 * x1);
         cout << setprecision(9) << fixed << x1 << endl;
         if (x1 == x1 - (x1 * x1 - 2) / (2 * x1)) break;
-    }
+    } cout << "Found a real root at: " << x1 << "." << endl;
 
-    cout << "The real root is at: " << x1 << endl;
     return 0;
 }
